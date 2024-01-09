@@ -173,7 +173,7 @@ def initialize_ray_cluster(
 
 def add_server_arguments(parser: argparse.ArgumentParser):
     # Model arguments
-    parser.add_argument('--model', type=str, default='facebook/opt-125m', help='model name')
+    parser.add_argument('--model', type=str, default='/mnt/data1/pzx/model/llama2-7b', help='model name')
     parser.add_argument('--model-path', type=str, default='~/.cacheflow/model_weights',
                         help='model path to download and load the weights')
     # Parallel arguments
@@ -187,6 +187,6 @@ def add_server_arguments(parser: argparse.ArgumentParser):
     parser.add_argument('--seed', type=int, default=0, help='random seed')
     parser.add_argument('--swap-space', type=int, default=20, help='CPU swap space size (GiB) per GPU')
     parser.add_argument('--max-num-batched-tokens', type=int, default=2560, help='maximum number of batched tokens per iteration')
-    parser.add_argument('--max-num-sequences', type=int, default=256, help='maximum number of sequences per iteration')
+    parser.add_argument('--max-num-sequences', type=int, default=512, help='maximum number of sequences per iteration')
     parser.add_argument('--use-dummy-weights', action='store_true', help='use dummy values for model weights')
     return parser
